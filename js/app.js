@@ -45,10 +45,10 @@ xmlhttp.onreadystatechange = function() {
             yyyy = today.getFullYear(),
             hour = today.getHours(),
             minutes = today.getMinutes(),
-            today = addZeroBefore(dd) + '.' + addZeroBefore(mm) + '.' + yyyy,
+            today2 = addZeroBefore(dd) + '.' + addZeroBefore(mm) + '.' + yyyy,
             t = addZeroBefore(hour) + ":" + addZeroBefore(minutes),
-            time = today + ' ' + t;
-        console.log(time)
+            time = today2 + ' ' + t;
+        //console.log(time)
 
         // var a = [data.table[0].birthdate.split(' ')[0], data.table[1].birthdate.split(' ')[0], today]
         // console.log(a.sort())
@@ -63,7 +63,7 @@ xmlhttp.onreadystatechange = function() {
                 result += "<td>" + data.table[x].experience + "</td>";
                 result += "</tr>";
                 tbody.innerHTML = result;
-                console.log(data.table[x].birthdate.split(' ')[0])
+                //console.log(data.table[x].birthdate.split(' ')[0]);
             }
         }
         // var sortByDateAsc = function(a, b) {
@@ -83,32 +83,32 @@ xmlhttp.onreadystatechange = function() {
 
         name.addEventListener("click", function() {
             sortBy("name");
-            name.classList.toggle("sort")
-        }, false)
+            name.classList.toggle("sort");
+        }, false);
 
         surname.addEventListener("click", function() {
             sortBy("surname");
-            surname.classList.toggle("sort")
-        }, false)
+            surname.classList.toggle("sort");
+        }, false);
 
         birthdate.addEventListener("click", function() {
             for (x in data.table) {
-                console.log(data.table[x].birthdate.split(' ')[0])
+                //console.log(data.table[x].birthdate.split(' ')[0]);
                 sortByDateAsc(data.table[x].birthdate.split(' ')[0]);
             }
 
-            birthdate.classList.toggle("sort")
-        }, false)
+            birthdate.classList.toggle("sort");
+        }, false);
 
         position.addEventListener("click", function() {
             sortBy("position");
-            position.classList.toggle("sort")
-        }, false)
+            position.classList.toggle("sort");
+        }, false);
 
         experience.addEventListener("click", function() {
             sortByNumberValue("experience");
-            experience.classList.toggle("sort")
-        }, false)
+            experience.classList.toggle("sort");
+        }, false);
 
         function sortBy(value) {
             result = "";
